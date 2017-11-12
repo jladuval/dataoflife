@@ -1,0 +1,55 @@
+{
+  "name": "dataoflife",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "pkg-build",
+    "coverage": "NODE_ENV=test_local pkg-coverage",
+    "flow": "pkg-flow",
+    "lint": "pkg-lint",
+    "prepublish": "pkg-build",
+    "test": "NODE_ENV=test_local pkg-test",
+    "test-only": "NODE_ENV=test_local pkg-test-only"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jladuval/dataoflife.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jladuval/dataoflife/issues"
+  },
+  "homepage": "https://github.com/jladuval/dataoflife#readme",
+  "dependencies": {
+    "@mishguru/package": "^1.14.0"
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  },
+  "babel": {
+    "presets": [
+      "flow",
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ],
+    "plugins": [
+      [
+        "transform-object-rest-spread",
+        {
+          "useBuiltIns": true
+        }
+      ]
+    ]
+  }
+}
